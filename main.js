@@ -14,20 +14,28 @@ const SafeSoundMenu = async () => {
     console.log("4. Exit")
     console.log("Founders: Dhamari, Ali, Maha")
     const { choice } = await prompt.get(["Choice"]);
+    console.log("Testing inside of safesounds menu: ", typeof choice);
     return choice;
 };
 
-
+// set a set setTimeout
 const main = async () => {
     prompt.start()
     try {
         // my set up
         while (true) {
-            const choice = await SafeSoundMenu(); // this is their choice
+
+            const choice = await SafeSoundMenu();
+            console.log(typeof choice)
+             // this is their choice
             switch (choice) {
                 case '1':
                     // call function that Record New Data. & store it within our database
-                    console.log("youre recording data");
+                    console.log("youre recording data")
+                    setTimeout(() => {
+                        // runs after 2 seconds
+                        console.log("this has ended");
+                      }, 2000);
                     break;
                 case '2':
                     // call function that does data analysis
@@ -47,7 +55,7 @@ const main = async () => {
         }
 
     } catch (error) {
-        console("this didnt work")
+        console("this didnt work");
     }
 };
 
