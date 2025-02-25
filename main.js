@@ -13,7 +13,7 @@ const SafeSoundMenu = async () => {
     console.log("3. Visualize Audio around you") // here youre seeing audio and its teaching you what hurts your hearing
     console.log("4. Exit")
     console.log("Founders: Dhamari, Ali, Maha")
-    const { choice } = await prompt.get(["Choice"]);
+    const { Choice: choice } = await prompt.get(["Choice"]);
     console.log("Testing inside of safesounds menu: ", typeof choice);
     return choice;
 };
@@ -55,7 +55,7 @@ const main = async () => {
         }
 
     } catch (error) {
-        console("this didnt work");
+        console.log("this didnt work");
     }
 };
 
